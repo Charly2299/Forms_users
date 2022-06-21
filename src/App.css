@@ -1,0 +1,130 @@
+html {
+  font-size: 16px;
+  font-family: "Bebas Neue", cursive;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+
+h2{
+    margin: 0;
+}
+body {
+  margin: 0;
+
+  background: radial-gradient(
+    circle,
+    rgba(38, 35, 101, 1) 0%,
+    rgba(43, 173, 159, 1) 100%
+  );
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-button button{
+  border: none;
+  background: rgb(146, 39, 234);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 45px;
+  margin-bottom: 10px;
+}
+
+.cards-users__container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-user {
+  background: radial-gradient(
+    circle,
+    rgba(255, 109, 224, 1) 4%,
+    rgba(252, 60, 60, 1) 100%
+  );
+  border-radius: 10px;
+  padding: 10px;
+  width: min(100%, 420px);
+}
+
+.card-content-title{
+    display: flex;
+   justify-content: center;
+}
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.card-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-actions button i:hover {
+  transform: scale(1.05);
+}
+
+.button-delete {
+  color: red;
+}
+
+.button-update {
+  color: rgb(9, 9, 60);
+}
+
+.form__new-user {
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 109, 1) 4%,
+    rgba(57, 232, 70, 1) 100%
+  );
+  border-radius: 10px;
+  padding: 10px;
+  width: min(100%, 420px);
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+}
+.form__new-user input {
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+}
+.form-button {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-button button {
+    border: none;
+    background: rgb(0, 122, 39);
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 45px;
+    padding: 5px;
+}
+
+.form-button button:hover {
+    transform: scale(1.05);
+}

@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useForm } from 'react-hook-form'
-const UserList = ({ user,deleteUser,updateUserById,updateUser}) => {
 
+const UserList = ({ user,deleteUser,updateUserById,setIsShowForm,reset,setObjectUpdate}) => {
 
+  //actualizar usuario
+  const updateUser=()=>{
+  
+    setIsShowForm(true)
+    const obj={
+      birthday: user?.birthday,
+    email: user?.email,
+    first_name: user?.first_name,
+    last_name: user?.last_name,
+    password: user?.password,
+
+    }
+    reset(obj)
+    setObjectUpdate(user)
+    
+      }
+    
 
 
     return (

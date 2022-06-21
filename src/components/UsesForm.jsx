@@ -1,9 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-const UsesForm = ({createUser}) => {
+const UsesForm = ({createUser,objectUpdate,updateUserById,handleSubmit, reset, register}) => {
 
 
-const {handleSubmit,register,reset} =useForm()
 
 const defaultValuesForm={
     birthday: "",
@@ -14,13 +13,22 @@ password: "",
 }
 
 const submit= data =>{
+
+if(objectUpdate !== undefined){
+updateUserById(objectUpdate.id,data)
+reset(defaultValuesForm)
+}
+else{
+    createUser(data)
+}
+
 console.log(data)
-createUser(data)
+
 reset(defaultValuesForm)
 }
 
   return (
-    <form className='form__new-user' onSubmit={handleSubmit(submit)}>
+    <form  onSubmit={handleSubmit(submit)}  className='form__new-user'>
 <div className='form-title'>
     <h2>New User</h2>
 </div>

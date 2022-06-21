@@ -9,12 +9,13 @@ function App() {
 
 
   const { handleSubmit, register, reset } = useForm()
+  const [users, setUsers] = useState()
   const [isShowForm, setIsShowForm] = useState(false)
   const [objectUpdate, setObjectUpdate] = useState()
 
   const URL = 'https://users-crud1.herokuapp.com/users/'
 
-  const [users, setUsers] = useState()
+
 
   //Funcion para mostrar la informacion Mostrar la informacion
   const getAllUsers = () => {
@@ -65,26 +66,16 @@ function App() {
       .then(resp => {
         console.log(resp.data)
         getAllUsers()
+        setObjectUpdate()
+        setIsShowForm(false)
       })
       .catch(error => console.log(error))
 
   }
 
 
-  //actualizar usuario
-  const updateUser=()=>{
-setIsShowForm(true)
-const obj={
-  birthday: users?.birthday,
-email: users?.email,
-first_name: users?.first_name,
-last_name: users?.last_name,
-password: users?.password,
-}
-reset(obj)
 
-  }
-
+  //form valores cuando se esconda
 const showForm=()=>{
   const obj2={
     birthday: "",
@@ -108,7 +99,11 @@ setIsShowForm(!isShowForm)
 isShowForm&&
 <UsesForm
 createUser={createUser}
-
+objectUpdate={objectUpdate}
+updateUserById={updateUserById}
+handleSubmit={handleSubmit}
+reset={reset}
+register={register}
 />
 
 
@@ -125,7 +120,10 @@ createUser={createUser}
               key={user.id}
               deleteUser={deleteUser}
               updateUserById={updateUserById}
-              updateUser={updateUser}
+              setIsShowForm={setIsShowForm}
+              reset={reset}
+              setObjectUpdate={setObjectUpdate}
+             
             />
 
 
